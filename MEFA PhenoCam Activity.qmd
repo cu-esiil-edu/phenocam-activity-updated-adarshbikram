@@ -132,7 +132,11 @@ View(GR_sites)
 **Challenge**: Can you subset the sitelist_table by a different primary vegetation type? How about by a different variable (table column)? Use the code cell below.
 
 ```{r}
+# Create a subset of only grassland sites 
+AG_sites <- subset(sitelist_table, primary_veg_type == "AG")  
 
+# View the first few grassland entries and entire table
+View(AG_sites)
 ```
 
 #### Create a Map of the PhenoCam Sites
@@ -237,7 +241,7 @@ par(mar=c(5, 6, 4, 2))
 # Create line plot
 plot(GCC_timeseries$date, GCC_timeseries$gcc_90,
      # Choose line color & type
-     col = "darkgreen", type = "b",
+     col = "red", type = "b",
      # Change font size
      cex = 1.5, cex.lab = 2, cex.axis = 2, cex.main = 3,
      # Add axis labels
@@ -456,3 +460,5 @@ file.remove(f)
 #### Thank you
 
 Thanks for exploring PhenoCam data. Hopefully, you have a stronger appreciation for phenology now!
+
+Change done
